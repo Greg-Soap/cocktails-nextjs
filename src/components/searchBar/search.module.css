@@ -1,0 +1,18 @@
+.form {
+  padding: 0.5rem;
+  border: 3px solid;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+.form input {
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+.form input:focus-visible {
+  outline: none;
+}
+.form input::placeholder {
+  color: inherit;
+}

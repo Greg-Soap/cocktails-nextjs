@@ -1,0 +1,28 @@
+.navbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+.brand {
+  font-size: 1.7rem;
+}
+.links {
+  display: flex;
+  gap: 2rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  align-items: center;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.themeIcon {
+  all: unset;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+}

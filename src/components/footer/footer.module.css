@@ -1,0 +1,8 @@
+.footer {
+  font-weight: bold;
+  height: 30px;
+  letter-spacing: 0.5px;
+  display: flex;
+  text-transform: uppercase;
+  align-items: self-end;
+}

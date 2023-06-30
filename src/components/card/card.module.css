@@ -1,0 +1,40 @@
+.card {
+  width: 38rem;
+  height: 20rem;
+  padding: 1rem;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 0.3rem;
+}
+.card:focus-visible {
+  outline: 2px solid;
+}
+.details {
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.details h3 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.details p {
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  flex-grow: 1;
+}
+.image {
+  border-radius: 0.3rem;
+}
+.link {
+  font-size: 1.6rem;
+  letter-spacing: 0.2px;
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+  border-radius: 0.3rem;
+}
+.link:focus-visible {
+  outline: 1px solid;
+}
