@@ -4,18 +4,25 @@ import styles from "./page.module.css";
 import { GetCocktails } from "@/api/getCocktails";
 import { useContext, useEffect, useState } from "react";
 import { SearchContext } from "@/context/Search";
+import Loading from "./loading";
 
 export default function Home() {
   const { search } = useContext(SearchContext);
   const [cocktails, setCocktails] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     async function fetchCocktails() {
       try {
         const fetchedCocktails = await GetCocktails(search);
         setCocktails(fetchedCocktails.slice(0, 24));
+        setIsLoading(false);
       } catch (error) {
+        setIsLoading(false);
+        setIsError(true);
         console.error("Error fetching cocktails:", error);
+        return <h2>Error fetching cocktails</h2>;
       }
     }
 
@@ -27,17 +34,21 @@ export default function Home() {
         Discover the Art of Mixology: Your Go-To Guide for Crafting Exquisite
         Cocktails - Welcome to the Cocktails Wiki!
       </h1>
-      <section className={styles.card_wrapper}>
-        {cocktails.map((cocktail: any) => (
-          <Card
-            key={cocktail.id}
-            id={cocktail.id}
-            name={cocktail.name}
-            category={cocktail.category}
-            image={cocktail.image}
-          />
-        ))}
-      </section>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <section className={styles.card_wrapper}>
+          {cocktails.map((cocktail: any) => (
+            <Card
+              key={cocktail.id}
+              id={cocktail.id}
+              name={cocktail.name}
+              category={cocktail.category}
+              image={cocktail.image}
+            />
+          ))}
+        </section>
+      )}
     </section>
   );
 }

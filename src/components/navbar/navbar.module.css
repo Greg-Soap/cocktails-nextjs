@@ -26,3 +26,8 @@
   text-align: center;
   cursor: pointer;
 }
+@media screen and (max-width: 469px) {
+  .link {
+    display: none;
+  }
+}
